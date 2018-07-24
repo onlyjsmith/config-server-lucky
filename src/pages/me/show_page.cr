@@ -6,6 +6,7 @@ class Me::ShowPage < MainLayout
   end
 
   private def helpful_tips
+    h3 "ENV: " + Lucky::Env.name
     h3 "Next, you may want to:"
     ul do
       li "Modify this page: src/pages/me/show_page.cr"
