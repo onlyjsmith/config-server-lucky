@@ -22,9 +22,14 @@ class Db::CreateRequiredSeeds < LuckyCli::Task
     # You likely want to be able to run this file more than once. To do that,
     # only create the record if it doesn't exist yet:
     #
-    # unless UserQuery.new.email("me@example.com").first?
-    #  # create the user
-    # end
+
+    UserBox.create
+    UserBox.create
+
+    unless UserQuery.new.email("me@example.com").first?
+     # create the user
+     UserBox.create &.email("me@example.com")
+    end
     puts "Done adding required data"
   end
 end
