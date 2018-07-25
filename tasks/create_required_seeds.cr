@@ -24,7 +24,6 @@ class Db::CreateRequiredSeeds < LuckyCli::Task
     #
 
     UserBox.create
-    UserBox.create
 
     unless UserQuery.new.email("me@example.com").first?
      # create the user
